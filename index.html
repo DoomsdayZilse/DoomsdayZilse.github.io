@@ -1,5 +1,8 @@
-<style type = "text/css">
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xandre e Nico Imobiliária</title>
+  <style type="text/css">
     h1 {
       text-align: center;
       font-size: 42px;
@@ -47,12 +50,6 @@
       margin: 20px;
     }
   </style>
-  <html>
-
-  <head>
-
-  <title>Xandre e Nico Imobiliária</title>
-
 </head>
 <body>
   <div class="header">
@@ -61,8 +58,11 @@
 
   <h1>Nossos Imóveis:</h1>
   <h2>Teu dinheiro: R$ <span id="moneyDisplay">0</span></h2>
+  <h2>Por clique: R$ <span id="clickPower">1</span></h2>
+  <h2>Renda passiva: R$ <span id="passiveIncomeDisplay">0</span>/s</h2>
+
   <div style="text-align: center;">
-    <button id="clickButton">1 Click = R$1,00</button>
+    <button id="clickButton"> Clique para ganhar dinheiro!</button>
   </div>
 
   <hr>
@@ -73,7 +73,7 @@
     <a href="https://doomsdayzilse.github.io/Casa1/Casa1.html">Clique aqui para saber mais sobre a casa!</a>
     <h6>Preço: R$1750</h6>
     <button class="buyButton" data-cost="1750" data-item-id="item1">Comprar</button>
-    <p>Casa adquirido: <span id="item1Owned">0</span></p>
+    <p>Casas adquiridas: <span id="item1Owned">0</span></p>
   </div>
 
   <div class="shopItem">
@@ -82,7 +82,7 @@
     <a href="https://doomsdayzilse.github.io/Apartamento1/Apartamento1.html">Clique aqui para saber mais sobre o apartamento!</a>
     <h6>Preço: R$3100</h6>
     <button class="buyButton" data-cost="3100" data-item-id="item2">Comprar</button>
-    <p>Apartamento adquirido: <span id="item2Owned">0</span></p>
+    <p>Apartamentos adquiridos: <span id="item2Owned">0</span></p>
   </div>
 
   <div class="shopItem">
@@ -91,31 +91,38 @@
     <a href="https://doomsdayzilse.github.io/CasaFam/CasaFam.html">Clique aqui para saber mais sobre a casa!</a>
     <h6>Preço: R$350</h6>
     <button class="buyButton" data-cost="350" data-item-id="item3">Comprar</button>
-    <p>Casa adquirido: <span id="item3Owned">0</span></p>
+    <p>Casas adquiridas: <span id="item3Owned">0</span></p>
   </div>
 
   <div class="shopItem">
     <h3>Abacaxi Residencial com 16cm²:</h3>
-    <img src="frenteaba.jpg" style="width: 600px; height:400;"><br>
+    <img src="frenteaba.jpg" style="width: 600px; height:400px;"><br>
     <a href="https://doomsdayzilse.github.io/Abacaxi/Abacaxi.html">Clique aqui para saber mais sobre o abacaxi!</a>
     <h6>Preço: R$100</h6>
     <button class="buyButton" data-cost="100" data-item-id="item4">Comprar</button>
-    <p>Casa adquirido: <span id="item4Owned">0</span></p>
+    <p>Abacaxis adquiridos: <span id="item4Owned">0</span></p>
   </div>
 
   <script>
     let money = 0;
+    let moneyPerClick = 1;
+    let passiveIncome = 0;
 
     const moneyDisplay = document.getElementById('moneyDisplay');
+    const clickPowerDisplay = document.getElementById('clickPower');
+    const passiveIncomeDisplay = document.getElementById('passiveIncomeDisplay');
     const clickButton = document.getElementById('clickButton');
 
-    function updateMoneyDisplay() {
+    function updateDisplay() {
       moneyDisplay.textContent = money;
+      clickPowerDisplay.textContent = moneyPerClick;
+      passiveIncomeDisplay.textContent = passiveIncome;
     }
 
+    
     clickButton.addEventListener('click', function () {
-      money += 1;
-      updateMoneyDisplay();
+      money += moneyPerClick;
+      updateDisplay();
     });
 
     const buyButtons = document.querySelectorAll('.buyButton');
@@ -128,55 +135,41 @@
 
         if (money >= cost) {
           money -= cost;
-          updateMoneyDisplay();
 
-          if (ownedSpan) {
-            let owned = parseInt(ownedSpan.textContent);
-            ownedSpan.textContent = owned + 1;
+          let owned = parseInt(ownedSpan.textContent);
+          ownedSpan.textContent = owned + 1;
+
+          if (itemId === "item1") {
+            moneyPerClick += 2;
+            passiveIncome += 1;
+          }
+          if (itemId === "item2") {
+            moneyPerClick += 5;
+            passiveIncome += 3;
+          }
+          if (itemId === "item3") {
+            moneyPerClick += 10;
+            passiveIncome += 5;
+          }
+          if (itemId === "item4") {
+            moneyPerClick += 1;
+            passiveIncome += 1;
           }
 
+          updateDisplay();
           alert('Você adquiriu o item com sucesso!');
         } else {
           alert('Dinheiro insuficiente para comprar este item!');
         }
       });
     });
+
+    setInterval(function () {
+      money += passiveIncome;
+      updateDisplay();
+    }, 1000);
+
+    updateDisplay();
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
