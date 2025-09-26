@@ -1,124 +1,150 @@
 <style type = "text/css">
-h1 {text-align: center;
-     font-size: 42;
-     color: rgb(0, 0, 0);
-    font-family:Georgia, 'Times New Roman', Times, serif;
- text-decoration:underline;}
 
-   
-h2 {text-align: center;
-     font-size: 22;
-     color: black;
-    font-family:Arial;}
-
-
-    h4 {text-align: center;
-     font-size: 22;
-     color: black;
-    font-family:Arial;
-    font-weight: bold;}
-
-    h3 {
-     font-size: 32;
-     color: rgb(182, 12, 12);
-    font-family:Georgia, 'Times New Roman', Times, serif;
- text-decoration: bold;}
-
- h5 {text-align: center;
-     font-size: 22;
-     color: rgb(117, 0, 0);
-    font-family:Arial;
-    font-style: italic;
-    font-weight: bold;}
-
-    .img1 {border-radius: 10px;}
-
-    .header {
-        padding: 30px;
-        text-align: center;
-        background: black;
-        color: white;
-        font-size: 30px;
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      color: rgb(0, 0, 0);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-decoration: underline;
     }
 
-A:link {color:rgb(218, 203, 0);
-font-family: Verdana;
-        font-size:50px;
-}
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      color: black;
+      font-family: Arial;
+    }
 
-A:visited {color:rgb(207, 135, 0);
-font-family: Verdana;
-}
+    h3 {
+      font-size: 32px;
+      color: rgb(182, 12, 12);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
 
-A:hover {text-decoration: underline;
-}
+    h6 {
+      font-size: 22px;
+      font-family: Arial;
+    }
 
-A:active {background-color:gray;
-}
+    .header {
+      padding: 30px;
+      text-align: center;
+      background: black;
+      color: white;
+      font-size: 30px;
+    }
 
-#left {
-     float:left;
-     padding-left: 20px;
-}
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
-#right {
-     float:right;
-     padding-right: 20px;
-}
+    .shopItem {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+    }
+  </style>
+  <html>
 
-#center {
-     float:right;
-padding-right: 25%
-}
-</style>
+  <head>
 
-<html><head><title>Xandre e Nico Imobiliaria</title></head>
-<body><div class="header">
+  <title>Xandre e Nico Imobiliária</title>
+
+</head>
+<body>
+  <div class="header">
     <p>Xandre e Nico Imobiliária</p>
   </div>
-     <br>
-<h1>Nossos Imovéis:</h1><br>
-     
- <h2>Teu dinheiro: $<span id="moneyDisplay">0</span></h2>
-    <button style=" width: 20%; height: 10%;" id="clickButton">1 Click =R$1,00</button>
 
-    <script src="script.js"></script>
-     
-<span id="left">
-    <div id="shopItems">
+  <h1>Nossos Imóveis:</h1>
+  <h2>Teu dinheiro: R$ <span id="moneyDisplay">0</span></h2>
+  <div style="text-align: center;">
+    <button id="clickButton">1 Click = R$1,00</button>
+  </div>
+
+  <hr>
+
   <div class="shopItem">
-       <h3>Casa Residencial com 160m²:</h3> </div>
-    <div style =  "text-align: left;"> <img src = "casa.webp" ><br></div>
-    <a href="https://doomsdayzilse.github.io/Casa1/Casa1.html"> Clique aqui para saber mais sobre a casa!</a></span>
-     <p>Preço: <span class="itemCost">R$1.750</span> clicks</p>
+    <h3>Casa Residencial com 160m²:</h3>
+    <img src="casa.webp" style="width: 600px; height: 400px;"><br>
+    <a href="https://doomsdayzilse.github.io/Casa1/Casa1.html">Clique aqui para saber mais sobre a casa!</a>
+    <h6>Preço: R$1750</h6>
     <button class="buyButton" data-cost="1750" data-item-id="item1">Comprar</button>
-  </div></div>
+    <p>Item 1 Owned: <span id="item1Owned">0</span></p>
+  </div>
 
-    <span id="right">
-         <div id="shopItems">
   <div class="shopItem">
-       
-    <h3>Apartamento:</h3> </div>
-    <div style =  "text-align: right;"> <img src = "frente.jpg" style= "height: auto"; max-width: 100%"; ><br></div>
-    <a href="https://doomsdayzilse.github.io/Apartamento1/Apartamento1.html"> Clique aqui para saber mais sobre o apartamento!</a></span>
-     <p>Preço: <span class="itemCost">R$3.100</span> clicks</p>
+    <h3>Apartamento:</h3>
+    <img src="frente.jpg" style="height: 500px; width: 700px;"><br>
+    <a href="https://doomsdayzilse.github.io/Apartamento1/Apartamento1.html">Clique aqui para saber mais sobre o apartamento!</a>
+    <h6>Preço: R$3100</h6>
     <button class="buyButton" data-cost="3100" data-item-id="item2">Comprar</button>
-</div></div>
+    <p>Item 2 Owned: <span id="item2Owned">0</span></p>
+  </div>
 
-    <span id="center">
-    <h3>Casa Residencial com 300m²:</h3> </div>
-    <div style =  "text-align: center;"> <img src = "Frente.webp"  width: 300px; height: 400px; ><br></div>
-    <a href="https://doomsdayzilse.github.io/CasaFam/CasaFam.html"> Clique aqui para saber mais sobre a casa!</a></span>
+  <div class="shopItem">
+    <h3>Casa Residencial com 300m²:</h3>
+    <img src="Frente.webp" style="width: 600px; height: 450px;"><br>
+    <a href="https://doomsdayzilse.github.io/CasaFam/CasaFam.html">Clique aqui para saber mais sobre a casa!</a>
+    <h6>Preço: R$3100</h6>
+    <button class="buyButton" data-cost="3100" data-item-id="item3">Comprar</button>
+    <p>Item 3 Owned: <span id="item3Owned">0</span></p>
+  </div>
 
-<span id="left">
-    <h3>Casa Residencial com 16cm²:</h3> </div>
-    <div style =  "text-align: left;"> <img src = "frenteaba.jpg" ><br></div>
-    <a href="https://doomsdayzilse.github.io/Abacaxi/Abacaxi.html"> Clique aqui para saber mais sobre o abacaxi!</a></span>
-     <br><br>
-     
-</body
+  <div class="shopItem">
+    <h3>Casa Residencial com 16cm² (Abacaxi):</h3>
+    <img src="frenteaba.jpg" style="width: 300px;"><br>
+    <a href="https://doomsdayzilse.github.io/Abacaxi/Abacaxi.html">Clique aqui para saber mais sobre o abacaxi!</a>
+    <h6>Preço: R$3100</h6>
+    <button class="buyButton" data-cost="3100" data-item-id="item4">Comprar</button>
+    <p>Item 4 Owned: <span id="item4Owned">0</span></p>
+  </div>
 
+  <script>
+    let money = 0;
+
+    const moneyDisplay = document.getElementById('moneyDisplay');
+    const clickButton = document.getElementById('clickButton');
+
+    function updateMoneyDisplay() {
+      moneyDisplay.textContent = money;
+    }
+
+    clickButton.addEventListener('click', function () {
+      money += 1;
+      updateMoneyDisplay();
+    });
+
+    const buyButtons = document.querySelectorAll('.buyButton');
+
+    buyButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const cost = parseInt(button.getAttribute('data-cost'));
+        const itemId = button.getAttribute('data-item-id');
+        const ownedSpan = document.getElementById(itemId + 'Owned');
+
+        if (money >= cost) {
+          money -= cost;
+          updateMoneyDisplay();
+
+          if (ownedSpan) {
+            let owned = parseInt(ownedSpan.textContent);
+            ownedSpan.textContent = owned + 1;
+          }
+
+          alert('Você adquiriu o item com sucesso!');
+        } else {
+          alert('Dinheiro insuficiente para comprar este item!');
+        }
+      });
+    });
+  </script>
+</body>
 </html>
+
 
 
 
