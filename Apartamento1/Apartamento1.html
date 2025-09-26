@@ -6,11 +6,14 @@
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
-img {vertical-align: middle;}
+img { width: 100%;
+  height: auto;
+  vertical-align: middle;}
 
 
 .slideshow-container {
-  max-width: 52.5%;
+  width: 90%;
+  max-width: 800px;
   position: relative;
   margin: auto;
 }
@@ -184,37 +187,37 @@ a:active {
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 6</div>
-  <img src="frente.jpg" style="width:1000px" height="500px">
+  <img src="frente.jpg" style="width:1000px">
   <div class="text">Frente do apartamento</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 6</div>
-  <img src="cozinha.jpg" style="width:1000px" height="500px">
+  <img src="cozinha.jpg" style="width:100%">
   <div class="text">Cozinha</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 6</div>
-  <img src="cozinha2.jpg" style="width:1000px" height="500px">
+  <img src="cozinha2.jpg" style="width:100%">
   <div class="text">Cozinha</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">4 / 6</div>
-  <img src="cozinha3.jpg" style="width:1000px" height="500px">
+  <img src="cozinha3.jpg" style="width:100%">
   <div class="text">Cozinha</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">5 / 6</div>
-  <img src="lavanderia.jpg" style="width:1000px" height="500px">
+  <img src="lavanderia.jpg" style="width:100%">
   <div class="text">Lavanderia</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">6 / 6</div>
-  <img src="banheiro.jpg" style="width:1000px" height="500px">
+  <img src="banheiro.jpg" style="width:100%">
   <div class="text">Banheiro</div>
 </div>
 
@@ -302,3 +305,4 @@ function showSlides(n) {
 </body>
 
 </html> 
+
