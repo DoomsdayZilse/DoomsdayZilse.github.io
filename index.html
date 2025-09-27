@@ -72,7 +72,7 @@
     <img src="casa.webp" style="width: 600px; height: 400px;"><br>
     <a href="https://doomsdayzilse.github.io/Casa1/Casa1.html">Clique aqui para saber mais sobre a casa!</a>
     <h6>Preço: R$1750</h6>
-    <button class="buyButton" data-cost="1750" data-item-id="item1">Comprar</button>
+    <button class="buyButton" data-cost="1750" data-item-id="item2">Comprar</button>
     <p>Casas adquiridas: <span id="item1Owned">0</span></p>
   </div>
 
@@ -81,7 +81,7 @@
     <img src="frente.jpg" style="height: 500px; width: 700px;"><br>
     <a href="https://doomsdayzilse.github.io/Apartamento1/Apartamento1.html">Clique aqui para saber mais sobre o apartamento!</a>
     <h6>Preço: R$3100</h6>
-    <button class="buyButton" data-cost="3100" data-item-id="item2">Comprar</button>
+    <button class="buyButton" data-cost="3100" data-item-id="item1">Comprar</button>
     <p>Apartamentos adquiridos: <span id="item2Owned">0</span></p>
   </div>
 
@@ -101,6 +101,15 @@
     <h6>Preço: R$100</h6>
     <button class="buyButton" data-cost="100" data-item-id="item4">Comprar</button>
     <p>Abacaxis adquiridos: <span id="item4Owned">0</span></p>
+  </div>
+
+  <div class="shopItem">
+    <h3>Morro de formiga com 20m²:</h3>
+    <img src="frenteaba.jpg" style="width: 600px; height:400px;"><br>
+    <a href="https://doomsdayzilse.github.io/Abacaxi/Abacaxi.html">Clique aqui para saber mais sobre o morro!</a>
+    <h6>Preço: R$20</h6>
+    <button class="buyButton" data-cost="20" data-item-id="item5">Comprar</button>
+    <p>Morros adquiridos: <span id="item4Owned">0</span></p>
   </div>
 
   <script>
@@ -139,19 +148,23 @@
           let owned = parseInt(ownedSpan.textContent);
           ownedSpan.textContent = owned + 1;
 
-          if (itemId === "item1") {
-            moneyPerClick += 2;
-            passiveIncome += 1;
-          }
           if (itemId === "item2") {
-            moneyPerClick += 5;
-            passiveIncome += 3;
+            moneyPerClick += 30;
+            passiveIncome += 15;
+          }
+          if (itemId === "item1") {
+            moneyPerClick += 100;
+            passiveIncome += 45;
           }
           if (itemId === "item3") {
             moneyPerClick += 10;
             passiveIncome += 5;
           }
           if (itemId === "item4") {
+            moneyPerClick += 3;
+            passiveIncome += 4;
+          }
+          if (itemId === "item5") {
             moneyPerClick += 1;
             passiveIncome += 1;
           }
@@ -173,3 +186,4 @@
   </script>
 </body>
 </html>
+
